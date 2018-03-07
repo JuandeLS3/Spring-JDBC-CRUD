@@ -15,11 +15,12 @@
       	<p>Dirección: ${datos.address}</p>
       	<p>Correo: ${datos.email}</p>
       	<p>Teléfono: ${datos.telephone}</p>
-      	<a href="/delete/${n}">Borrar contacto</a>
+      	
       	<hr>
       </c:forEach>
     </p>
-    
+    <a href="/delete/${n}">Borrar contacto</a><br>
+    <a href="/update/${n}">Actualizar contacto</a><br><br>
     <a href="/employee">Atrás</a>
  </body>
 </html>

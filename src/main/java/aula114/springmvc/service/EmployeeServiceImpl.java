@@ -46,4 +46,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         jdbcTemplate.update(sql, name);
 	}
 	
+	public void update(Contact contact) {
+        String sql = "update contact set email=?, address=?, telephone=? where name=?";
+        System.out.println("Nombreeeeeeee -->> " + contact.getName());
+        jdbcTemplate.update(sql, contact.getEmail(), contact.getAddress(), contact.getTelephone(), contact.getName());
+        System.out.println("Contacto actualizado: " + contact.getEmail() +" -------" + contact.getTelephone());
+	}
+	
 }

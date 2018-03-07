@@ -10,4 +10,5 @@ public interface EmployeeService {
 	public List<Contact> listUserData(String id);
 	public void add(Contact contact);
 	public void delete(String name);
+	public void update(Contact contact);
 }

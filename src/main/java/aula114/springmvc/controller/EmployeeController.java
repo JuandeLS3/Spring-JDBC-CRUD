@@ -64,4 +64,22 @@ public class EmployeeController {
   	return "redirect:/employee";
   }
   
+  // Carga la información del usuario al que se va a hacer update.
+  @RequestMapping(value="/update/{id}")
+  public String cargarUpdate(Model model, @PathVariable("id") String id){
+	  model.addAttribute("n", id);
+	  List<Contact> datos = new ArrayList<Contact>();
+	  datos = employeeService.listUserData(id);
+	  model.addAttribute("datos", datos);
+	  return "update";
+  }
+  
+  
+  @RequestMapping(value="/update/{id}", method=RequestMethod.POST)
+  public String update(@ModelAttribute Contact contact){ 
+	  employeeService.update(contact);
+	  //System.out.println("Contacto actualizado: " + contact.getEmail() +" -------" + contact.getTelephone());
+	  return "redirect:/employee";
+  }
 }
+
